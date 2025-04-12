@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список книг</title>
+    <style>
+        /* Стили для страницы */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Шапка страницы */
+        header {
+            background-color: #343a40;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 3em;
+            margin: 0;
+        }
+
+        /* Блок книги */
+        .book-card {
+            background-color: white;
+            padding: 20px;
+            margin: 20px auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: relative;
+            max-width: 900px;
+            min-height: 240px;
+            padding-right: 180px; /* Место справа для изображения */
+        }
+
+        .book-title {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .book-info {
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+
+        .book-image {
+            width: 150px;
+            height: 200px;
+            object-fit: cover;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Кнопка "Назад на главную" */
+        .back-btn {
+            display: block;
+            width: fit-content;
+            margin: 30px auto 40px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+
+        .back-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Список книг</h1>
+</header>
+
+<!-- Контейнер для всех книг -->
+{% for book in books %}
+<div class="book-card">
+    <img src="{{ book['image_url'] }}" alt="Фото книги" class="book-image">
+    <div class="book-title">{{ book['title'] }}</div>
+    <div class="book-info">
+        <p><strong>Автор:</strong> {{ book['author_name'] }}</p>
+        <p><strong>Жанр:</strong> {{ book['genre'] }}</p>
+        <p><strong>Цена:</strong> {{ book['price'] }} руб.</p>
+        <p><strong>Год публикации:</strong> {{ book['publication_year'] }}</p>
+        <p><strong>Краткое описание:</strong> {{ book['short_description'] }}</p>
+    </div>
+</div>
+{% endfor %}
+
+<!-- Кнопка "Назад на главную" -->
+<a href="{{ url_for('index') }}" class="back-btn">Назад на главную</a>
+
+</body>
+</html>
+

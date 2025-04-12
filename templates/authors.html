@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Список авторов</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #343a40;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .author-card {
+            background-color: white;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 800px;
+            display: flex;
+            align-items: flex-start;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .author-photo {
+            width: 120px;
+            height: auto;
+            border-radius: 8px;
+            margin-right: 20px;
+        }
+
+        .author-info {
+            flex: 1;
+        }
+
+        .author-info h2 {
+            margin: 0 0 10px;
+        }
+
+        .author-info p {
+            margin: 5px 0;
+        }
+
+        .bio {
+            font-style: italic;
+            color: #444;
+        }
+
+        .back-btn {
+            display: block;
+            width: fit-content;
+            margin: 20px auto;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+        }
+
+        .back-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Список авторов</h1>
+</header>
+
+{% for author in authors %}
+<div class="author-card">
+    <img src="{{ author.photo_url }}" alt="Фото {{ author.first_name }} {{ author.last_name }}" class="author-photo">
+    <div class="author-info">
+        <h2>{{ author.first_name }} {{ author.last_name }}</h2>
+        <p><strong>Дата рождения:</strong> {{ author.birth_date }}</p>
+        <p class="bio">{{ author.bio }}</p>
+    </div>
+</div>
+{% endfor %}
+
+<a href="/" class="back-btn">Назад на главную</a>
+
+</body>
+</html>
+

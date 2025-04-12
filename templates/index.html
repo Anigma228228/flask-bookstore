@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная страница магазина книг</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Шапка страницы */
+        header {
+            background-color: #343a40;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 3em;
+            margin: 0;
+        }
+
+        /* Меню */
+        nav {
+            background-color: #28a745;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2em;
+            margin: 0 20px;
+        }
+
+        nav a:hover {
+            color: #ddd;
+        }
+
+        /* Основной контент */
+        .main-content {
+            padding: 30px;
+            text-align: center;
+            background-color: white;
+        }
+
+        .banner {
+            width: 100%;
+            height: 400px;
+            background-image: url('https://cdn.culture.ru/images/9c3752ce-849c-585a-84f6-d167035792b8'); /* Замените на свою картинку */
+            background-size: cover;
+            background-position: center;
+            margin-bottom: 20px;
+        }
+
+        .description {
+            font-size: 1.2em;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .description h2 {
+            color: #28a745;
+            font-size: 2em;
+        }
+
+        /* Блок "Почему выбирают нас" */
+        .reasons {
+            background-color: #28a745;
+            color: white;
+            padding: 30px;
+            margin-top: 30px;
+        }
+
+        .reasons h3 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .reasons ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .reasons ul li {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        /* Нижняя информация */
+        footer {
+            background-color: #343a40;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Шапка -->
+<header>
+    <h1>Книжный магазин "Литературный мир"</h1>
+    <p>Добро пожаловать в наш мир книг!</p>
+</header>
+
+<!-- Главное меню -->
+<nav>
+    <a href="http://localhost:5000/authors">Авторы</a>
+    <a href="http://localhost:5000/books">Наши книги</a>
+    <a href="{{ url_for('contacts') }}">Контакты</a>
+</nav>
+
+<!-- Основной контент -->
+<div class="main-content">
+    <div class="banner"></div>
+
+    <div class="description">
+        <h2>О магазине</h2>
+        <p>Мы — это место, где каждый может найти книгу по своему вкусу. Наш магазин предлагает широкий выбор литературных произведений: от классики до современных бестселлеров. Мы гордимся своим ассортиментом и всегда готовы помочь вам найти идеальную книгу для чтения!</p>
+    </div>
+
+    <div class="reasons">
+        <h3>Почему выбирают нас:</h3>
+        <ul>
+            <li>Широкий выбор книг на любой вкус</li>
+            <li>Удобный процесс заказа и доставки</li>
+            <li>Книги по доступным ценам</li>
+            <li>Частые акции и скидки</li>
+            <li>Профессиональная консультация и рекомендации</li>
+        </ul>
+    </div>
+</div>
+
+<!-- Нижняя информация -->
+<footer>
+    <p>© 2025 Книжный магазин "Литературный мир" | Все права защищены</p>
+    <p>Телефон: +7 (846) 123-45-67 | Email: infobookshop2025@gmail.com</p>
+</footer>
+
+</body>
+</html>

@@ -1,2 +1,3 @@
-web: gunicorn zadanie.py
+web: python zadanie.py
+
 

@@ -113,8 +113,8 @@
 
 <!-- Главное меню -->
 <nav>
-    <a href="http://localhost:5000/authors">Авторы</a>
-    <a href="http://localhost:5000/books">Наши книги</a>
+    <a href="{{ url_for('authors') }}">Авторы</a>
+    <a href="{{ url_for('books') }}">Наши книги</a>
     <a href="{{ url_for('contacts') }}">Контакты</a>
 </nav>
 
